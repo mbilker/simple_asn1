@@ -14,5 +14,5 @@ num-bigint = "^0.2.0"
 num-traits = "^0.2.0"
 
 [dev-dependencies]
-quickcheck = "^0.7.1"
-rand = "0.5.5"
+quickcheck = "0.9"
+rand = "0.7"
