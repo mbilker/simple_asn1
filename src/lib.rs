@@ -252,14 +252,9 @@ impl<'a> PartialEq<OID> for &'a OID {
 /// 1.2.840.113549.1.1.1. (Coincidentally, this is RSA.)
 #[macro_export]
 macro_rules! oid {
-    ( $( $e: expr ),* ) => {{
-        let mut res = Vec::new();
-
-        $(
-            res.push(BigUint::from($e as u64));
-        )*
-        OID::new(res)
-    }};
+    ( $( $e:expr ),* ) => {
+        $crate::OID::new(vec![$($crate::BigUint::from($e as u64),)*])
+    };
 }
 
 const PRINTABLE_CHARS: &'static str =
